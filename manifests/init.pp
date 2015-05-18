@@ -44,7 +44,7 @@ class consul(
     password => $user_password
   }
 
-  file { '/var/consul':
+  file { $data_dir:
     ensure => directory,
     owner => 'consul',
     group => 'consul',
