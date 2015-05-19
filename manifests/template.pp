@@ -21,6 +21,7 @@ class consul::template() {
     path => '/usr/local/bin:/usr/bin:/usr/sbin:/bin',
     command => 'rm *.tar.gz',
     cwd => '/usr/local/bin',
+    onlyif => 'test -f /usr/local/bin/consul-template_0.9.0_linux_amd64.tar.gz',
     require => Exec['tar-consul-template']
   }
 }

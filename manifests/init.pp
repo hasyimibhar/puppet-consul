@@ -35,6 +35,7 @@ class consul(
     path => '/usr/local/bin:/usr/bin:/usr/sbin:/bin',
     command => 'rm *.zip',
     cwd => '/usr/local/bin',
+    onlyif => 'test -f /usr/local/bin/0.5.0_linux_amd64.zip',
     require => Exec['unzip-consul']
   }
 
