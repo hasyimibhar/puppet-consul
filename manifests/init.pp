@@ -107,4 +107,10 @@ class consul(
     ensure => present,
     content => template('consul/consul-client.conf.erb')
   }
+
+  file { $logfile:
+    ensure => present,
+    owner => 'consul',
+    group => 'consul'
+  }
 }
